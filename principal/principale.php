@@ -21,47 +21,7 @@
             </div>
             <div class="navBar">
                 <nav class="navbar">
-                    <!-- <nav class="navbar navbar-expanded-lg"> -->
-                    <!-- <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Dropdown
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled">Disabled</a>
-                                </li>
-                            </ul>
-                            <form class="d-flex">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </div> -->
-
-
                     <div id="content">
-
                         <a href='principale.php?deconnexion=true'><span>Déconnexion</span></a>
                         <!-- tester si l'utilisateur est connecté -->
                         <?php
@@ -89,13 +49,46 @@
     </header>
 
     <main>
-        <div>
-            <form id="selectTheme" action="./question.php" method="post">
-                <input type="submit" value="rock" name="rock" id="rock" class="theme" data-info="rock">
-                <input type="submit" value="electro" name="electro" id="electro" class="theme" data-info="electro">
-            </form>
-        </div>
-        <div></div>
+        <!-- <section>
+            <div>
+                <form id="selectTheme" action="./question.php" method="post">
+                    <input type="submit" value="rock" name="rock" id="rock" class="theme" data-info="rock">
+                    <input type="submit" value="electro" name="electro" id="electro" class="theme" data-info="electro">
+                </form>
+            </div>
+            <div></div>
+        </section> -->
+
+        <section>
+            <?php
+            $search = $_POST['search'];
+
+            $servername = "localhost";
+            $username = "sebastien ";
+            $password = "sebastien";
+            $db = "test";
+
+            $conn = new mysqli($servername, $username, $password, $db);
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $sql = "select * from QUESTIONS where qst_txt like '%$search%'";
+
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo $row["qst_txt"] . "<br>";
+                }
+            } else {
+                echo "0 records";
+            }
+
+            $conn->close();
+            ?>
+        </section>
 
     </main>
     <footer>

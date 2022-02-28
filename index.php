@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style.css" media="screen" type="text/css" />
     <!-- modification du texte -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Quizz</title>
+    <title>SimplonSong</title>
 </head>
 
 <html>
@@ -33,7 +33,7 @@
                 <h2>Connexion</h2>
 
                 <label><b>Nom d'utilisateur</b></label>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="pseudo" required>
+                <input type="text" placeholder="Pseudo" name="pseudo" required>
 
                 <label><b>Mot de passe</b></label>
                 <input type="password" placeholder="Entrer le mot de passe" name="password" required>
@@ -48,16 +48,16 @@
             <form action="./inscription/inscription.php" method="post">
                 <h2>Inscription</h2>
 
-                <label for=""><b>Nom :</b></label>
+                <!-- <label for=""><b>Nom :</b></label>
                 <input type="text" name="nom" id="name" placeholder="Nom"> <br>
                 <label for=""><b>Prénom :</b></label>
                 <input type="text" name="prenom" id="prenom" placeholder="Prénom"> <br>
                 <label for=""><b>Age :</b></label> <br>
-                <input type="date" name="age" id="age" placeholder="Age"> <br>
+                <input type="date" name="age" id="age" placeholder="Age"> <br> -->
                 <label for=""><b>Pseudo :</b></label>
                 <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo"> <br>
-                <label for=""><b>Email :</b></label> <br>
-                <input type="email" name="mail" id="mail" placeholder="Mail"> <br>
+                <!-- <label for=""><b>Email :</b></label> <br>
+                <input type="email" name="mail" id="mail" placeholder="Mail"> <br> -->
                 <label for=""><b>Mot de Passe :</b></label>
                 <input type="password" name="password" id="" placeholder="Password"> <br>
                 <input type="submit" value="inscription">

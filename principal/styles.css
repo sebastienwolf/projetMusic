@@ -1,0 +1,182 @@
+@charset "UTF-8";
+.body {
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.836);
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  background-color: #eb9003;
+  color: #FFC05F;
+}
+
+.title {
+  width: 100%;
+  margin-bottom: 40px;
+  font-weight: bolder;
+}
+
+#selectTheme {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav {
+  display: inline;
+}
+
+.theme {
+  height: 50px;
+  width: 100px;
+  margin-left: 60px;
+  margin-right: 60px;
+  background-color: #000000;
+  border: 1px solid #fca311;
+  color: #fca311;
+  -webkit-box-shadow: 10px 5px 5px silver;
+          box-shadow: 10px 5px 5px silver;
+  font-weight: bold;
+}
+
+.selectAnswer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* bloc question, reponse */
+#blocQuestion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: #fca311;
+  color: #fca311;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+/* question */
+.question {
+  font-size: larger;
+  font-weight: 900;
+  margin-top: 50px;
+}
+
+/* case reponse */
+.c {
+  width: 500px;
+  height: 100px;
+  margin: 20px;
+  background-color: #000000;
+  color: #fca311;
+  border: 1px solid #fca311;
+}
+
+/* bloc résultat placement */
+#reset {
+  width: 100%;
+  margin-top: 100px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 15%;
+}
+
+/* taille du texte résultat */
+#reset p {
+  font-size: larger;
+  font-weight: bold;
+}
+
+/* bouton résultat */
+#rat {
+  height: 50px;
+  width: 100px;
+  background-color: black;
+  border: 1px solid #fca311;
+  color: #fca311;
+  font-weight: bold;
+  border-radius: 10%;
+  -webkit-transition: 0.5;
+  transition: 0.5;
+}
+
+#rat:hover {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-box-shadow: 0 10px 10px white;
+          box-shadow: 0 10px 10px white;
+  background-color: #5a5f7c;
+}
+
+input {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+input:hover {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-box-shadow: 0 10px 10px white;
+          box-shadow: 0 10px 10px white;
+  background-color: #5a5f7c;
+}
+
+button {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+button:hover {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-box-shadow: 0 10px 10px white;
+          box-shadow: 0 10px 10px white;
+  background-color: #5a5f7c;
+}
+
+/* ================================================= */
+/* connection cards */
+.log {
+  width: 500px;
+  height: auto;
+  -webkit-backdrop-filter: blur(16px) saturate(50%);
+          backdrop-filter: blur(16px) saturate(50%);
+  background-color: rgba(255, 253, 253, 0.41);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+/*# sourceMappingURL=styles.css.map */

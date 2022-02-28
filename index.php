@@ -1,18 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS INSCRIPTION -->
+    <link rel="stylesheet" href="./style.css" media="screen" type="text/css" />
+    <!-- modification du texte -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Quizz</title>
+</head>
+
 <html>
 
 <head>
     <meta charset="utf-8">
     <!-- importer le fichier de style -->
-    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
 </head>
 
-<body>
-    <div id="container">
-        <button id="conneClick" class="login" data-info="connection">connection</button>
-        <button id="insClick" class="login" data-info="inscription">inscription</button>
+<body class="quizz">
+
+
+    <div id="container" class="container">
+        <div class="container__button">
+            <button id="conneClick" class="login" data-info="connection">connection</button>
+            <button id="insClick" class="login" data-info="inscription">inscription</button>
+        </div>
         <!-- zone de connexion -->
         <div class="connection" id="connection">
-            <form action="verification.php" method="POST">
+            <form action="./inscription/verification.php" method="POST">
                 <h2>Connexion</h2>
 
                 <label><b>Nom d'utilisateur</b></label>
@@ -28,7 +45,7 @@
 
 
         <div class="inscription" id="inscription">
-            <form action="inscription.php" method="post">
+            <form action="./inscription/inscription.php" method="post">
                 <h2>Inscription</h2>
 
                 <label for=""><b>Nom :</b></label>
@@ -46,7 +63,8 @@
                 <input type="submit" value="inscription">
             </form>
         </div>
-
+        <br>
+        <br>
         <?php
         if (isset($_GET['erreur'])) {
             $err = $_GET['erreur'];
@@ -60,7 +78,7 @@
         ?>
 
     </div>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

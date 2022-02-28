@@ -1,55 +1,103 @@
-body {
-    background: #67BE4B;
+.quizz {
+  background: rgba(255, 255, 255, 0.836);
+  color: #FFC05F;
 }
 
 #container {
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 10%;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.login {
+  height: 50px;
+  width: 100px;
+  background-color: #eb9003;
+  border: 1px solid #FFC05F;
+  color: #FFC05F;
+  -webkit-box-shadow: 10px 5px 5px silver;
+          box-shadow: 10px 5px 5px silver;
+  border-radius: 15%;
+  font-weight: bold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.login:hover {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-box-shadow: 0 10px 10px white;
+          box-shadow: 0 10px 10px white;
+  background-color: #5a5f7c;
 }
 
 /* Bordered form */
 form {
-    width: 100%;
-    padding: 30px;
-    border: 1px solid #f1f1f1;
-    background: #fff;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  width: 100%;
+  padding: 30px;
+  border: 1px solid #FFC05F;
+  background: #eb9003;
+  -webkit-box-shadow: 10px 5px 5px silver;
+          box-shadow: 10px 5px 5px silver;
+  border-radius: 10%;
 }
 
 #container h1 {
-    width: 38%;
-    margin: 0 auto;
-    padding-bottom: 10px;
+  width: 38%;
+  margin: 0 auto;
+  padding-bottom: 10px;
 }
 
 /* Full-width inputs */
 input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #FFC05F;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Set a style for all buttons */
 input[type=submit] {
-    background-color: #53af57;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+  background-color: #925800;
+  color: #FFC05F;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: #FFC05F 1px solid;
+  cursor: pointer;
+  width: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 input[type=submit]:hover {
-    background-color: white;
-    color: #53af57;
-    border: 1px solid #53af57;
+  border: 1px solid #FFC05F;
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-box-shadow: 0 10px 10px white;
+          box-shadow: 0 10px 10px white;
+  background-color: #5a5f7c;
 }
 
 .inscription {
-    display: none;
+  display: none;
 }
+/*# sourceMappingURL=style.css.map */

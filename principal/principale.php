@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>SimplonSong</title>
 </head>
 
@@ -38,17 +39,26 @@
                         }
                         ?>
                     </div>
-
-                    <form action="" method="GET">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder=" Search" id="search-musique">
+                    </div>
+                    <!-- <form action="" method="GET">
                         <input type="text" placeholder="search" name="pseudo" required>
                         <input type="submit" id='submit' value='search'>
-                    </form>
+                    </form> -->
                 </nav>
             </div>
         </div>
     </header>
 
     <main>
+
+
+        <section>
+            <div id="resultat-search">
+
+            </div>
+        </section>
         <!-- <section>
             <div>
                 <form id="selectTheme" action="./question.php" method="post">
@@ -59,44 +69,44 @@
             <div></div>
         </section> -->
 
-        <section>
-            <?php
-            $search = $_POST['search'];
 
-            $servername = "localhost";
-            $username = "sebastien ";
-            $password = "sebastien";
-            $db = "test";
-
-            $conn = new mysqli($servername, $username, $password, $db);
-
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            $sql = "select * from QUESTIONS where qst_txt like '%$search%'";
-
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo $row["qst_txt"] . "<br>";
-                }
-            } else {
-                echo "0 records";
-            }
-
-            $conn->close();
-            ?>
-        </section>
 
     </main>
     <footer>
 
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="../script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#search-musique').keyup(function() {
+                $('#result-search').html("")
+
+                var musique = $(this).val();
+                console.log("test", musique)
+
+                if (musique != "") {
+                    $.ajax({
+                        type: 'GET',
+                        url: 'recherche.php',
+                        data: 'song=' + encodeURIComponent(musique),
+                        success: function(data) {
+                            if (data != "") {
+                                document.getElementById('resultat-search').innerHTML = ""
+                                $('#resultat-search').append(data)
+                                console.log('musique')
+                            } else {
+                                document.getElementById('resultat-search').innerHTML = "<div>aucune musique</div>"
+                            }
+                        }
+
+                    });
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>
